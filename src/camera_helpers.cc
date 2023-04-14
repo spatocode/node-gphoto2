@@ -1,7 +1,10 @@
 /* Copyright contributors of the node-gphoto2 project */
 
 #include <errno.h>
-#include <sys/socket.h>
+if defined(_WIN32)
+  #include <Winsock2.h>
+else
+  #include <sys/socket.h>
 #include <sys/types.h>
 #include <sys/un.h>
 #include <unistd.h>
