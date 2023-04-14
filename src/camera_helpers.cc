@@ -5,7 +5,7 @@
 #include <Winsock2.h>
 #endif
 
-#ifdef linux
+#ifdef __unix__
 #include <sys/socket.h>
 #endif
 
