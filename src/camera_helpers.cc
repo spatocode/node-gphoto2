@@ -322,7 +322,7 @@ int GPCamera::getCameraFile(take_picture_request *req, CameraFile **file) {
     req->target_path = tmpname;
   } else if (!req->socket_path.empty()) {
     struct sockaddr_un serv_addr;
-    bzero(&serv_addr, sizeof(serv_addr));
+    memset(&serv_addr, 0, sizeof(serv_addr));
     serv_addr.sun_family = AF_UNIX;
     snprintf(serv_addr.sun_path, sizeof(serv_addr.sun_path),
              "%s", req->socket_path.c_str());
