@@ -5,12 +5,20 @@
 #include <Winsock2.h>
 #endif
 
+
+#ifndef _AFUNIX_
+#define _AFUNIX_
+
 #ifdef __unix__
 #include <sys/socket.h>
 #endif
 
 #include <sys/types.h>
+
+#ifdef __unix__
 #include <sys/un.h>
+#endif
+
 #include <unistd.h>
 #include <cstring>
 #include <ctime>
