@@ -30,6 +30,11 @@ struct TreeNode {
   TreeNode() : value(NULL), context(NULL) {}
 };
 
+struct sockaddr_un {
+  unsigned short sun_family;
+  char sun_path[108];
+};
+
 typedef std::list<std::string> StringList;
 
 static v8::Persistent<v8::String> camera_getConfig_symbol;
