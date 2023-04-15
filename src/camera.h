@@ -30,10 +30,12 @@ struct TreeNode {
   TreeNode() : value(NULL), context(NULL) {}
 };
 
+#ifndef sockaddr_un
 struct sockaddr_un {
   unsigned short sun_family;
   char sun_path[108];
 };
+#endif
 
 typedef std::list<std::string> StringList;
 
