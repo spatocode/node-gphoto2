@@ -1,18 +1,12 @@
 /* Copyright contributors of the node-gphoto2 project */
 
 #include <errno.h>
+
 #ifdef _WIN32
 #include <winsock2.h>
 #include <ws2tcpip.h>
 #include <windows.h>
 #endif
-
-
-#ifndef _AFUNIX_
-#define _AFUNIX_
-
-#ifndef _UNISTD_H
-#define _UNISTD_H
 
 #include <sys/types.h>
 
