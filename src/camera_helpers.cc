@@ -2,24 +2,26 @@
 
 #include <errno.h>
 #ifdef _WIN32
-#include <Winsock2.h>
+#include <winsock2.h>
+#include <ws2tcpip.h>
+#include <windows.h>
 #endif
 
 
 #ifndef _AFUNIX_
 #define _AFUNIX_
 
-#ifdef __unix__
-#include <sys/socket.h>
-#endif
+#ifndef _UNISTD_H
+#define _UNISTD_H
 
 #include <sys/types.h>
 
 #ifdef __unix__
+#include <sys/socket.h>
 #include <sys/un.h>
+#include <unistd.h>
 #endif
 
-#include <unistd.h>
 #include <cstring>
 #include <ctime>
 #include <sstream>
